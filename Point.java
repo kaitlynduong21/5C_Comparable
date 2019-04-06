@@ -1,7 +1,7 @@
 /**
   Represent a point, using Cartesian coordinates
  */
-public class Point{
+public class Point implements Comparable{
     private double xcor;
     private double ycor;
 
@@ -20,7 +20,7 @@ public class Point{
         double myDistance = Math.pow(xcor, 2) + Math.pow(ycor, 2);
         Point otherPoint = (Point)otherObj;
         double objDistance = Math.pow(otherPoint.xcor, 2) + Math.pow(otherPoint.ycor, 2);
-        return Double.compare(myDistance, objDistance); 
+        return Double.compare(myDistance, objDistance);
     }
 
     // -------- previously-written code ----------

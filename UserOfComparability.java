@@ -32,13 +32,15 @@ public class UserOfComparability {
         Date d0 = new Date( 2019, 4, 4);
         reportRelationship( "Date vs. itself", d0, d0, "0");
 
-        /* error message:
-        UserOfComparability.java:33: error: incompatible types: Date cannot be converted to Point
-        reportRelationship( "Date vs. itself", d0, d0, "0");
-                                               ^
-        Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-        1 error
-        */
+        // Date vs. same date
+        reportRelationship( "Date vs. same date", d0, new Date( 2019, 4, 4), "0");
+
+        // Date vs. earlier date
+        reportRelationship( "Date vs. earlier date", d0, new Date( 2019, 2, 4), "positive int");
+
+        // Date vs. later date
+        reportRelationship( "Date vs. later date", d0, new Date( 2019, 5, 4), "negative int");
+
 
         System.out.println( System.lineSeparator()
                           + "IncomparableDog comparisons");
@@ -75,8 +77,8 @@ public class UserOfComparability {
      */
     private static void reportRelationship
       ( String description
-      , Point a
-      , Point b
+      , Comparable a
+      , Comparable b
       , String expect
       ) {
         System.out.println( description);

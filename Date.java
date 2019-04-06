@@ -1,7 +1,7 @@
 /**
   Represent a date
  */
-public class Date{
+public class Date implements Comparable{
     private int y,m,d;
 
 
@@ -25,7 +25,7 @@ public class Date{
       Date otherDate = (Date)otherObj;
       int myDays = y * 365 + m * 30 + d;
       int objDays = otherDate.y * 365 + otherDate.m * 30 + otherDate.d;
-      return Integer.compare(myDays, objDays);      
+      return Integer.compare(myDays, objDays);
     }
 
 }
